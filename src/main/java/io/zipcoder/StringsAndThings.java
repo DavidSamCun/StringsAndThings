@@ -1,6 +1,8 @@
 package io.zipcoder;
 
 
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 /**
  * @author tariq
  */
@@ -14,8 +16,26 @@ public class StringsAndThings {
      *           countYZ("day fez"); // Should return 2
      *           countYZ("day fyyyz"); // Should return 2
      */
-    public Integer countYZ(String input){
-        return null;
+    public Integer countYZ(String input){           //DONE
+
+        String[] arr = input.split(" ");
+        int count = 0;
+        char last;
+        for (String ss : arr)  {
+            System.out.println(ss);
+            last = ss.charAt(ss.length()-1);
+            if ((last == 'y') || (last == 'Y')) {
+                count++;
+
+                //(last == 'y' || (last == 'Y') || last == 'z' || last ='Z')
+            } else if ((last == 'z') || (last == 'Z')){
+                count++;
+
+            } else {}
+        }
+
+        System.out.println("Count = " + count);
+        return count;
     }
 
     /**
@@ -27,8 +47,15 @@ public class StringsAndThings {
      *           removeString("Hello there", "e") //  Should return "Hllo thr"
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
-    public String removeString(String base, String remove){
-        return null;
+    public String removeString(String base, String remove){         //DONE
+
+        String output;
+        //String[] arr = base.split(" "); //sort words into an array
+        output = base.replace(remove, "");
+
+        System.out.println(output);
+
+        return output;
     }
 
     /**
@@ -40,7 +67,25 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
+        Boolean result = false;
+        int count1 = 0;
+        int count2 = 0;
+        Pattern pattern1 = Pattern.compile("is");
+        Pattern pattern2 = Pattern.compile("not");
+        Matcher match1 = pattern1.matcher(input);
+        Matcher match2 = pattern2.matcher(input);
+        while (match1.find())
+            count1++;
+
+        while (match2.find())
+            count2++;
+
+        System.out.println("is "+ count1 + " - not " + count2);
+        if (count1 == count2){
+            result = true;
+        } else {}
+
+        return result;
     }
 
     /**
@@ -51,6 +96,8 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
+
+
         return null;
     }
 
@@ -63,6 +110,21 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
+
+        int count1 = 0;
+        Pattern pattern1 = Pattern.compile("is");
+        Pattern pattern2 = Pattern.compile("not");
+        Matcher match1 = pattern1.matcher(input);
+        Matcher match2 = pattern2.matcher(input);
+        while (match1.find())
+            count1++;
+
+        int length = input.length();
+
+        for ( int i = 0; i <= length; i ++){
+            
+        }
+
         return null;
     }
 }

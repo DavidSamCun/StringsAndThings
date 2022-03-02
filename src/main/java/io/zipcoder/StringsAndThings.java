@@ -96,9 +96,25 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
+        boolean happy = false;
+
+        char[] letters = input.toCharArray();
 
 
-        return null;
+        for ( int i = 0; i < letters.length; i++){
+            if( (letters[i] == 'g') && (letters[i+1] == 'g')){
+                happy = true;
+            } else if (i < 0 && (letters[i-1] !='g') && (letters[i] == 'g') && (letters[i+1] != 'g')){
+                happy = false;
+            } else {
+            }
+        }
+
+//        for ( char letter : input.toCharArray())
+//            if (letter.)
+
+
+        return happy;
     }
 
 

@@ -127,20 +127,22 @@ public class StringsAndThings {
      */
     public Integer countTriple(String input){
 
-        int count1 = 0;
-        Pattern pattern1 = Pattern.compile("is");
-        Pattern pattern2 = Pattern.compile("not");
-        Matcher match1 = pattern1.matcher(input);
-        Matcher match2 = pattern2.matcher(input);
-        while (match1.find())
-            count1++;
+        int happy = 0;
 
-        int length = input.length();
+        char[] letters = input.toCharArray();
 
-        for ( int i = 0; i <= length; i ++){
-            
+
+        for ( int i = 0; i < letters.length -2 ; i++){
+            if( (letters[i] == letters[i+1]) && (letters[i+1] == letters[i+2])){
+                happy++;
+            } else {
+            }
         }
 
-        return null;
+//        for ( char letter : input.toCharArray())
+//            if (letter.)
+
+
+        return happy;
     }
 }

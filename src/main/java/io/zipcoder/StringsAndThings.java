@@ -106,6 +106,7 @@ public class StringsAndThings {
                 happy = true;
             } else if (i < 0 && (letters[i-1] !='g') && (letters[i] == 'g') && (letters[i+1] != 'g')){
                 happy = false;
+                break;
             } else {
             }
         }
